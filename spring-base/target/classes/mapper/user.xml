@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mybatis.dao.UserDAO">
+
+  <resultMap id="CityAreaResultMap" type="com.mybatis.bo.UserBO">
+    <result column="name" property="name"/>
+    <result column="age" property="age"/>
+    <result column="sex" property="sex"/>
+    <result column="is_active" property="isActive"/>
+    <result column="created_at" property="createdAt"/>
+    <result column="updated_at" property="updatedAt"/>
+  </resultMap>
+
+  <sql id="userDO_columns">
+    name, age, sex, is_active, created_at, updated_at
+  </sql>
+
+  <select id="query" resultMap="CityAreaResultMap">
+    SELECT
+    <include refid="userDO_columns"/>
+    FROM user
+    WHERE is_active = 1
+    <if test="age!=null and age!=''">
+      and age = #{age}
+    </if>
+  </select>
+
+
+
+</mapper>
