@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c39d1e26-8e37-428b-bbdd-3809cf8a0f11" name="Default" comment="添加mybatis配置，测试mybatis if test标签对0=''和1=''的对比原理">
-      <change afterPath="$PROJECT_DIR$/spring-base/.travis.yml" afterDir="false" />
+    <list default="true" id="c39d1e26-8e37-428b-bbdd-3809cf8a0f11" name="Default" comment="travis.yaml">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-base/spring-base.iml" beforeDir="false" afterPath="$PROJECT_DIR$/spring-base/spring-base.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-base/.travis.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.travis.yml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -267,7 +266,7 @@
       <workItem from="1544361001893" duration="16057000" />
       <workItem from="1545754654943" duration="1535000" />
       <workItem from="1547639643138" duration="886000" />
-      <workItem from="1600008965279" duration="1078000" />
+      <workItem from="1600008965279" duration="1928000" />
     </task>
     <task id="LOCAL-00001" summary="添加mybatis配置，测试mybatis if test标签对0=''和1=''的对比原理">
       <created>1544499697593</created>
@@ -276,7 +275,14 @@
       <option name="project" value="LOCAL" />
       <updated>1544499697593</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="travis.yaml">
+      <created>1600012994913</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1600012994915</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -303,7 +309,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="添加mybatis配置，测试mybatis if test标签对0=''和1=''的对比原理" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加mybatis配置，测试mybatis if test标签对0=''和1=''的对比原理" />
+    <MESSAGE value="travis.yaml" />
+    <option name="LAST_COMMIT_MESSAGE" value="travis.yaml" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
