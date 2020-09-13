@@ -1,0 +1,12 @@
+language: java
+
+notifications:
+  email: true
+
+sudo: false
+
+jdk:
+  - openjdk8
+
+script:              # 执行:下面的命令
+  - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
