@@ -15,7 +15,7 @@ import java.util.Date;
 @Component
 public class Consumer {
 
-    @RabbitListener(queues = RabbitMqConfiguration.DEAD_LETTER_QUEUE_NAME)
+    @RabbitListener(queues = RabbitMqConfiguration.DELAYED_QUEUE_NAME)
     public void consumeGeneratorMsg(Message message, Channel channel,
                                     @Header(AmqpHeaders.DELIVERY_TAG) long tag)
             throws IOException {

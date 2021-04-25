@@ -17,8 +17,6 @@ import java.util.Map;
  */
 @Configuration
 public class RabbitMqConfiguration {
-    public final static String DELAYED_EXCHANGE_NAME = "delay_exchange";
-    public final static String DELAYED_QUEUE_NAME = "delayed.queue.test";
     public static final String DEAD_LETTER_EXCHANGE = "delay.queue.dead_letter.exchange";
     public static final String DEAD_LETTER_QUEUE_ROUTING_KEY = "delay.queue.dead_letter.routing_key";
     public static final String DEAD_LETTER_QUEUE_NAME = "delay.queue.dead_letter.queue";
@@ -36,38 +34,25 @@ public class RabbitMqConfiguration {
     }
 
 
-    @Bean("delayExchange")
-    public DirectExchange delayExchange() {
-        return new DirectExchange(DELAYED_EXCHANGE_NAME);
-    }
+    public static final String DELAYED_QUEUE_NAME = "delay.queue.demo.delay.queue";
+    public static final String DELAYED_EXCHANGE_NAME = "delay.queue.demo.delay.exchange";
+    public static final String DELAYED_ROUTING_KEY = "delay.queue.demo.delay.routingkey";
 
-    @Bean("deadLetterExchange")
-    public DirectExchange deadLetterExchange() {
-        return new DirectExchange(DEAD_LETTER_EXCHANGE);
-    }
-
-    @Bean("delayQueue")
-    public Queue delayQueue() {
-        Map<String, Object> argsDelay = new HashMap<>(2);
-        argsDelay.put("x-dead-letter-exchange", DEAD_LETTER_EXCHANGE);
-        argsDelay.put("x-dead-letter-routing-key", DEAD_LETTER_QUEUE_ROUTING_KEY);
-        return QueueBuilder.durable(DELAYED_QUEUE_NAME).withArguments(argsDelay).build();
-    }
-
-    @Bean("deadLetterQueue")
-    public Queue deadLetterQueue() {
-        return new Queue(DEAD_LETTER_QUEUE_NAME);
+    @Bean
+    public Queue immediateQueue() {
+        return new Queue(DELAYED_QUEUE_NAME);
     }
 
     @Bean
-    public Binding delayBinding(@Qualifier("delayQueue") Queue queue,
-                                @Qualifier("delayExchange") Exchange exchange) {
-        return BindingBuilder.bind(queue).to(exchange).with(DELAY_QUEUE_ROUTING_KEY).noargs();
+    public CustomExchange customExchange() {
+        Map<String, Object> args = new HashMap<>();
+        args.put("x-delayed-type", "direct");
+        return new CustomExchange(DELAYED_EXCHANGE_NAME, "x-delayed-message", true, false, args);
     }
 
     @Bean
-    public Binding deadLetterBinding(@Qualifier("deadLetterQueue") Queue queue,
-                                     @Qualifier("deadLetterExchange") Exchange exchange) {
-        return BindingBuilder.bind(queue).to(exchange).with(DEAD_LETTER_QUEUE_ROUTING_KEY).noargs();
+    public Binding bindingNotify(@Qualifier("immediateQueue") Queue queue,
+                                 @Qualifier("customExchange") CustomExchange customExchange) {
+        return BindingBuilder.bind(queue).to(customExchange).with(DELAYED_ROUTING_KEY).noargs();
     }
 }
