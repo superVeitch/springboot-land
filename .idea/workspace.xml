@@ -4,11 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c39d1e26-8e37-428b-bbdd-3809cf8a0f11" name="Default" comment="2121">
+    <list default="true" id="c39d1e26-8e37-428b-bbdd-3809cf8a0f11" name="Default" comment="使用mq插件实现延时队列">
+      <change afterPath="$PROJECT_DIR$/spring-redis/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-redis/src/main/java/com/redis/Application.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-redis/src/main/java/com/redis/controller/IndexController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-redis/src/main/java/com/redis/random/ClientSessionInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-redis/src/main/java/com/redis/random/TestRandom.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-redis/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-rabbitmq/src/main/java/com/rabbitmq/config/RabbitMqConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-rabbitmq/src/main/java/com/rabbitmq/config/RabbitMqConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-rabbitmq/src/main/java/com/rabbitmq/consumer/Consumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-rabbitmq/src/main/java/com/rabbitmq/consumer/Consumer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-rabbitmq/src/main/java/com/rabbitmq/service/MqSendService.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-rabbitmq/src/main/java/com/rabbitmq/service/MqSendService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-rabbitmq/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/spring-rabbitmq/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,12 +87,14 @@
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.redis.random" />
+      <recent name="com.redis" />
+      <recent name="com.redis.controller" />
       <recent name="com.rabbitmq.config" />
       <recent name="com.rabbitmq" />
-      <recent name="com.mybatis.test" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.Application (1)">
+  <component name="RunManager" selected="Spring Boot.Application (2)">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -211,6 +220,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Application (2)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="spring-redis" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.redis.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.redis.Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="spring-base" />
       <extension name="coverage">
@@ -256,9 +278,11 @@
       <item itemvalue="JUnit.Test" />
       <item itemvalue="Spring Boot.Application" />
       <item itemvalue="Spring Boot.Application (1)" />
+      <item itemvalue="Spring Boot.Application (2)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.Application (2)" />
         <item itemvalue="Spring Boot.Application (1)" />
         <item itemvalue="JUnit.Test" />
         <item itemvalue="JUnit.Test.test" />
@@ -295,7 +319,17 @@
       <workItem from="1619088722870" duration="103000" />
       <workItem from="1619088861591" duration="11789000" />
       <workItem from="1619106846368" duration="6760000" />
-      <workItem from="1619149989599" duration="3682000" />
+      <workItem from="1619149989599" duration="3757000" />
+      <workItem from="1619332018994" duration="822000" />
+      <workItem from="1619342174920" duration="2217000" />
+      <workItem from="1619437608725" duration="594000" />
+      <workItem from="1619595408046" duration="1476000" />
+      <workItem from="1619667623555" duration="3349000" />
+      <workItem from="1619676724404" duration="1250000" />
+      <workItem from="1619679007469" duration="633000" />
+      <workItem from="1619680283490" duration="2901000" />
+      <workItem from="1619749565850" duration="7498000" />
+      <workItem from="1620442311495" duration="2359000" />
     </task>
     <task id="LOCAL-00001" summary="添加mybatis配置，测试mybatis if test标签对0=''和1=''的对比原理">
       <created>1544499697593</created>
@@ -318,7 +352,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619108174739</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="使用mq插件实现延时队列">
+      <created>1619328718469</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1619328718469</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -348,7 +389,8 @@
     <MESSAGE value="添加mybatis配置，测试mybatis if test标签对0=''和1=''的对比原理" />
     <MESSAGE value="travis.yaml" />
     <MESSAGE value="2121" />
-    <option name="LAST_COMMIT_MESSAGE" value="2121" />
+    <MESSAGE value="使用mq插件实现延时队列" />
+    <option name="LAST_COMMIT_MESSAGE" value="使用mq插件实现延时队列" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

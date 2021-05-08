@@ -9,11 +9,13 @@
         <outputRelativeToContentRoot value="true" />
         <module name="spring-rabbitmq" />
         <module name="spring-base" />
+        <module name="spring-redis" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="spring-base" target="6" />
       <module name="spring-rabbitmq" target="8" />
+      <module name="spring-redis" target="8" />
       <module name="springboot-land" target="1.5" />
     </bytecodeTargetLevel>
   </component>
