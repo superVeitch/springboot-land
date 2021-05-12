@@ -4,18 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c39d1e26-8e37-428b-bbdd-3809cf8a0f11" name="Default" comment="使用mq插件实现延时队列">
-      <change afterPath="$PROJECT_DIR$/spring-redis/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-redis/src/main/java/com/redis/Application.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-redis/src/main/java/com/redis/controller/IndexController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-redis/src/main/java/com/redis/random/ClientSessionInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-redis/src/main/java/com/redis/random/TestRandom.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-redis/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+    <list default="true" id="c39d1e26-8e37-428b-bbdd-3809cf8a0f11" name="Default" comment="redis random 测试">
+      <change afterPath="$PROJECT_DIR$/spring-redis/src/main/java/com/redis/config/RedisClusterConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-redis/src/main/java/com/redis/controller/PubSubMessageController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-rabbitmq/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/spring-rabbitmq/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-base/src/test/java/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-base/src/test/java/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-redis/src/main/java/com/redis/random/TestRandom.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-redis/src/main/java/com/redis/random/TestRandom.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-redis/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/spring-redis/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,6 +70,9 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.repository.indices" />
+  </component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -329,7 +327,10 @@
       <workItem from="1619679007469" duration="633000" />
       <workItem from="1619680283490" duration="2901000" />
       <workItem from="1619749565850" duration="7498000" />
-      <workItem from="1620442311495" duration="2359000" />
+      <workItem from="1620442311495" duration="2533000" />
+      <workItem from="1620446000029" duration="1839000" />
+      <workItem from="1620804450353" duration="1921000" />
+      <workItem from="1620809376755" duration="916000" />
     </task>
     <task id="LOCAL-00001" summary="添加mybatis配置，测试mybatis if test标签对0=''和1=''的对比原理">
       <created>1544499697593</created>
@@ -359,7 +360,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619328718469</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="redis random 测试">
+      <created>1620444832659</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1620444832659</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -390,7 +398,8 @@
     <MESSAGE value="travis.yaml" />
     <MESSAGE value="2121" />
     <MESSAGE value="使用mq插件实现延时队列" />
-    <option name="LAST_COMMIT_MESSAGE" value="使用mq插件实现延时队列" />
+    <MESSAGE value="redis random 测试" />
+    <option name="LAST_COMMIT_MESSAGE" value="redis random 测试" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

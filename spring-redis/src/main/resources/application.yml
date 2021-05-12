@@ -1,7 +1,11 @@
 spring:
   redis:
-    host: 127.0.0.1
-    port: 6379
+    cluster:
+      nodes: 127.0.0.1:20000,127.0.0.1:20001,127.0.0.1:30002
+    timeout: 500
+
+#    host: 127.0.0.1
+#    port: 6379
 
 server:
   port: 9999

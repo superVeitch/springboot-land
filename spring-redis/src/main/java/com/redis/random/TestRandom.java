@@ -4,6 +4,7 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
+import java.util.List;
 import java.util.Objects;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
@@ -11,7 +12,7 @@ import java.util.concurrent.Executors;
 @Component
 public class TestRandom {
     @Resource
-    private RedisTemplate<String, ClientSessionInfo> redisTemplate;
+    private RedisTemplate<String, String> redisTemplate;
 
     private static final String KEY = "redis-key-17502142159";
 
@@ -22,7 +23,7 @@ public class TestRandom {
         System.out.println(redisTemplate.boundSetOps(KEY).size());
         for (int i = 0; i < 50000; i++) {
             executor.execute(() -> {
-                ClientSessionInfo value = redisTemplate.boundSetOps(KEY).randomMember();
+                List<Object> value = redisTemplate.boundHashOps(KEY).values();
                 if (Objects.isNull(value)){
                     System.out.println("test is null!!!" );
                 }
@@ -40,7 +41,7 @@ public class TestRandom {
             clientSessionInfo.setConnStatus("ON");
             // 缓存时的时间认为是操作时间
             clientSessionInfo.setConnTime(System.currentTimeMillis());
-            redisTemplate.boundSetOps(KEY).add(clientSessionInfo);
+            redisTemplate.boundHashOps(KEY).put(clientSessionInfo.getClientId(), "");
         }
 
     }
